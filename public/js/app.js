@@ -1930,13 +1930,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "New",
   data: function data() {
     return {
       // Create a new form instance
       form: new Form({
-        cat_name: ''
+        category: ''
       })
     };
   },
@@ -38529,38 +38531,54 @@ var render = function() {
                 },
                 [
                   _c("div", { staticClass: "card-body" }, [
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("label", { attrs: { for: "categoryId" } }, [
-                        _vm._v("Category Name")
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.form.cat_name,
-                            expression: "form.cat_name"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          id: "categoryId",
-                          placeholder: "Write Category",
-                          name: "cat_name"
-                        },
-                        domProps: { value: _vm.form.cat_name },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
+                    _c(
+                      "div",
+                      { staticClass: "form-group" },
+                      [
+                        _c("label", { attrs: { for: "categoryId" } }, [
+                          _vm._v("Category Name")
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.form.category,
+                              expression: "form.category"
                             }
-                            _vm.$set(_vm.form, "cat_name", $event.target.value)
+                          ],
+                          staticClass: "form-control",
+                          class: {
+                            "is-invalid": _vm.form.errors.has("category")
+                          },
+                          attrs: {
+                            type: "text",
+                            id: "categoryId",
+                            placeholder: "Write Category",
+                            name: "category"
+                          },
+                          domProps: { value: _vm.form.category },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.form,
+                                "category",
+                                $event.target.value
+                              )
+                            }
                           }
-                        }
-                      })
-                    ])
+                        }),
+                        _vm._v(" "),
+                        _c("has-error", {
+                          attrs: { form: _vm.form, field: "category" }
+                        })
+                      ],
+                      1
+                    )
                   ]),
                   _vm._v(" "),
                   _vm._m(1)

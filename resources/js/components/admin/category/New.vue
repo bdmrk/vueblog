@@ -17,7 +17,9 @@
                                     <div class="form-group">
                                         <label for="categoryId">Category Name</label>
                                         <input type="text" class="form-control" id="categoryId"
-                                               placeholder="Write Category" v-model="form.cat_name" name="cat_name">
+                                               placeholder="Write Category" v-model="form.category" name="category"
+                                               :class="{ 'is-invalid': form.errors.has('category') }">
+                                        <has-error :form="form" field="category"></has-error>
                                     </div>
 
 
@@ -46,7 +48,7 @@
             return {
                 // Create a new form instance
                 form: new Form({
-                    cat_name: '',
+                    category: '',
 
                 })
             }
