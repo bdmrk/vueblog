@@ -4,13 +4,16 @@
 
       <!-- Main content -->
       <section class="content">
-          <div class="row">
-              <div class="col-12">
+          <div class="row justify-content-around">
+              <div class="col-12 ">
                   <div class="card">
                       <div class="card-header">
                           <h3 class="card-title">Category List</h3>
                           <div class="card-tools">
-                              <button class="btn btn-sm btn-primary" >Add Category</button>
+                              <button class="btn btn-sm btn-primary" >
+                                  <router-link to="/add-category" style="color:#fff">Add Category</router-link>
+
+                              </button>
                           </div>
                       </div>
                       <!-- /.card-header -->
