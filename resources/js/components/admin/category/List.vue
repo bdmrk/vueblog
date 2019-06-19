@@ -1,6 +1,6 @@
 <template>
 
-  <div>
+  <div class="mt-5">
 
       <!-- Main content -->
       <section class="content">
@@ -10,7 +10,7 @@
                       <div class="card-header">
                           <h3 class="card-title">Category List</h3>
                           <div class="card-tools">
-                              <button class="btn btn-sm btn-primary" >
+                              <button class="btn btn-sm btn-success" >
                                   <router-link to="/add-category" style="color:#fff">Add Category</router-link>
 
                               </button>

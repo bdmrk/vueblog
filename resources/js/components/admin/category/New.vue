@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="mt-5">
         <section class="content">
             <div class="container-fluid">
                 <div class="row justify-content-around">
@@ -12,11 +12,12 @@
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form role="form">
+                            <form role="form" @click.prevent="addCategory()">
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="categoryId">Category Name</label>
-                                        <input type="text" class="form-control" id="categoryId" placeholder="Write Category">
+                                        <input type="text" class="form-control" id="categoryId"
+                                               placeholder="Write Category" v-model="form.cat_name" name="cat_name">
                                     </div>
 
 
@@ -40,7 +41,28 @@
 
 <script>
     export default {
-        name: "New"
+        name: "New",
+        data () {
+            return {
+                // Create a new form instance
+                form: new Form({
+                    cat_name: '',
+
+                })
+            }
+        },
+
+        methods: {
+            addCategory() {
+                this.form.post('/add-category')
+                    .then((response)=>{
+                        console.log(response.data)
+                    })
+                    .catch(()=>{
+                        console.log('wrong')
+                    })
+            },
+        }
     }
 </script>
 
