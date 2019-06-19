@@ -58,7 +58,20 @@
             addCategory() {
                 this.form.post('/add-category')
                     .then((response)=>{
-                        console.log(response.data)
+                        //to redirect category list page
+
+
+                        toast.fire({
+                            type: 'success',
+                            title: 'Category Created successfully'
+                        })
+
+                        this.$router.push('/category-list')
+
+
+                        // console.log(response.data)
+
+
                     })
                     .catch(()=>{
                         console.log('wrong')

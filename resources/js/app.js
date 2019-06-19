@@ -34,6 +34,22 @@ Vue.component(AlertError.name, AlertError)
 window.Form = Form;
 
 
+// ES6 Modules or TypeScript
+
+import swal from 'sweetalert2'
+
+const toast = swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 1500
+});
+
+
+
+window.toast = toast;
+
+
 const app = new Vue({
     el: '#app',
     router,
