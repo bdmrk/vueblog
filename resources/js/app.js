@@ -42,15 +42,31 @@ const toast = swal.mixin({
     toast: true,
     position: 'top-end',
     showConfirmButton: false,
-    timer: 1500
+    timer: 3000
 });
-
 
 
 window.toast = toast;
 
 
+//to use vuex
+
+import Vuex from 'vuex'
+Vue.use(Vuex)
+
+// Make sure to call Vue.use(Vuex) first if using a module system
+
+import storeData from './store/index'
+const store = new Vuex.Store({
+    state: {
+        storeData
+    }
+})
+
+
+
 const app = new Vue({
     el: '#app',
     router,
+
 });
